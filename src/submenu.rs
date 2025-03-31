@@ -176,10 +176,10 @@ impl GamecubeMenu {
     const DPAD_DOWN: usize = 9;
     const RIGHT_STICK: usize = 10;
     const TAP_JUMP: usize = 11;
-    const STICK_SENS: usize = 13;
-    const RUMBLE: usize = 14;
-    const AB_SMASH: usize = 15;
-    const COUNT: usize = 16;
+    const STICK_SENS: usize = 12;
+    const RUMBLE: usize = 13;
+    const AB_SMASH: usize = 14;
+    const COUNT: usize = 15;
 }
 
 impl TagSubMenu for GamecubeMenu {
@@ -328,6 +328,7 @@ impl TagSubMenu for GamecubeMenu {
             Self::DPAD_UP => b"DPad Up",
             Self::DPAD_LR => b"DPad Side",
             Self::DPAD_DOWN => b"DPad Down",
+            Self::RIGHT_STICK => b"C-Stick",
             Self::TAP_JUMP => {
                 let mut controls = unsafe { get_ptr_to_controls(self.controls_id) };
                 if controls.controls_mut().gc_tapjump {
@@ -546,6 +547,7 @@ impl TagSubMenu for ProControllerMenu {
             Self::DPAD_UP => b"DPad Up",
             Self::DPAD_LR => b"DPad Side",
             Self::DPAD_DOWN => b"DPad Down",
+            Self::RIGHT_STICK => b"Right Stick",
             Self::TAP_JUMP => {
                 let mut controls = unsafe { get_ptr_to_controls(self.controls_id) };
                 if controls.controls_mut().pro_tapjump {
