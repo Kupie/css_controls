@@ -53,7 +53,7 @@ impl TagSubMenu for TopLevel {
     }
 
     fn get_title(&self) -> &'static [u8] {
-        b"Edit Controls"
+        b"[Edit Controls]"
     }
 
     fn get_button_count(&self) -> usize {
@@ -62,10 +62,10 @@ impl TagSubMenu for TopLevel {
 
     fn get_button_text(&self, button_index: usize) -> Option<Vec<u8>> {
         let name: &[u8] = match button_index {
-            Self::PRESETS => b"Shortcuts",
-            Self::GAMECUBE => b"GameCube",
-            Self::PRO_CONTROLLER => b"Pro Controller",
-            Self::JOY_CONS => b"Joy-Cons",
+            Self::PRESETS => b"[Shortcuts]",
+            Self::GAMECUBE => b"[GameCube]",
+            Self::PRO_CONTROLLER => b"[Pro Controller]",
+            Self::JOY_CONS => b"[Single Joy-Con]",
             _ => return None,
         };
 
@@ -112,7 +112,7 @@ impl<F: Fn(&mut ControllerMapping, InputKind)> TagSubMenu for ButtonSelector<F> 
     }
 
     fn get_title(&self) -> &'static [u8] {
-        b"Pick Button"
+        b"[Pick Button]"
     }
 
     fn get_button_count(&self) -> usize {
@@ -313,7 +313,7 @@ impl TagSubMenu for GamecubeMenu {
     }
 
     fn get_title(&self) -> &'static [u8] {
-        b"GameCube"
+        b"[GameCube]"
     }
 
     fn get_button_text(&self, button_index: usize) -> Option<Vec<u8>> {
@@ -531,7 +531,7 @@ impl TagSubMenu for ProControllerMenu {
     }
 
     fn get_title(&self) -> &'static [u8] {
-        b"Pro Controller"
+        b"[Pro Controller]"
     }
 
     fn get_button_text(&self, button_index: usize) -> Option<Vec<u8>> {
@@ -722,7 +722,7 @@ impl TagSubMenu for JoyConMenu {
     }
 
     fn get_title(&self) -> &'static [u8] {
-        b"Single Joy-Con"
+        b"[Single Joy-Con]"
     }
 
     fn get_button_text(&self, button_index: usize) -> Option<Vec<u8>> {
@@ -836,7 +836,7 @@ impl TagSubMenu for ShortcutsMenu {
     }
 
     fn get_title(&self) -> &'static [u8] {
-        b"Shortcuts"
+        b"[Shortcuts]"
     }
 
     fn get_button_count(&self) -> usize {
